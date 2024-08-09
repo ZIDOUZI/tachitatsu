@@ -40,9 +40,9 @@ def to_kotatsu_url(ty_source: str, ty_url: str) -> str | None:
     if ty_source == "Comick":
         return ty_url.replace("/comic/", "")
     if ty_source == "Hitomi":
-        return re.sub(r'.+(\d{7}).html', '$1', ty_url)
+        return ty_url[-12:-5]
     if ty_source == "NHentai":
-        return ty_url[3:-1]
+        return ty_url
     return None
 
 
@@ -54,9 +54,9 @@ def to_kotatsu_chapter_url(ty_source: str, ty_url: str) -> str | None:
     if ty_source == "Comick":
         return ty_url.replace("/comic/", "")
     if ty_source == "Hitomi":
-        return re.sub(r'.+(\d{7}).html', '$1', ty_url)
+        return ty_url[-12:-5]
     if ty_source == "NHentai":
-        return ty_url[3:-1]
+        return ty_url
     return None
 
 
