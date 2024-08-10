@@ -41,6 +41,8 @@ def to_kotatsu_url(ty_source: str, ty_url: str) -> str | None:
         return ty_url.replace("/comic/", "")
     if ty_source == "Hitomi":
         return ty_url[-12:-5]
+    if ty_source == "E-Hentai":
+        return ty_url[:22]
     if ty_source == "NHentai":
         return ty_url
     return None
@@ -55,6 +57,8 @@ def to_kotatsu_chapter_url(ty_source: str, ty_url: str) -> str | None:
         return ty_url.replace("/comic/", "")
     if ty_source == "Hitomi":
         return ty_url[-12:-5]
+    if ty_source == "E-Hentai":
+        return ty_url[:22]
     if ty_source == "NHentai":
         return ty_url
     return None
@@ -68,7 +72,7 @@ def to_kotatsu_public_url(ty_source: str, kt_url: str) -> str | None:
     if ty_source == "Comick":
         return "https://comick.cc/comic/" + kt_url
     if ty_source == "Hitomi":
-        return "https://hitomi.la" + kt_url
+        return "https://hitomi.la/g/" + kt_url
     if ty_source == "NHentai":
         return "https://nhentai.net" + kt_url
     return None
